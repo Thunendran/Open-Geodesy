@@ -15,13 +15,21 @@ function filterPapers(keyword) {
 }
 
 function loadComments(button) {
+  const allButtons = document.querySelectorAll(".comment-button");
+  const allContainers = document.querySelectorAll(".giscus-comment");
+
+  allButtons.forEach(function (btn) {
+    btn.textContent = "Show Comments";
+    btn.disabled = false;
+  });
+
+  allContainers.forEach(function (container) {
+    container.innerHTML = "";
+    container.removeAttribute("data-loaded");
+  });
+
   const discussionSection = button.closest(".paper-discussion");
   const container = discussionSection.querySelector(".giscus-comment");
-
-  if (container.getAttribute("data-loaded") === "true") {
-    return;
-  }
-
   const term = container.getAttribute("data-term");
 
   const script = document.createElement("script");
@@ -44,7 +52,7 @@ function loadComments(button) {
   container.appendChild(script);
   container.setAttribute("data-loaded", "true");
 
-  button.textContent = "Comments Loaded";
+  button.textContent = "Comments Open";
   button.disabled = true;
 }
 
