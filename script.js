@@ -7,7 +7,7 @@ function filterPapers(keyword) {
     const keywords = paper.getAttribute("data-keywords");
 
     if (keyword === "all" || keywords.includes(keyword)) {
-      paper.style.display = "grid";
+      paper.style.display = "block";
     } else {
       paper.style.display = "none";
     }
