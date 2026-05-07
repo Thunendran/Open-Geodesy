@@ -1,3 +1,5 @@
+console.log("script.js loaded");
+
 function filterPapers(keyword) {
   const papers = document.querySelectorAll(".paper-card");
 
