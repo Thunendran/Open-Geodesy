@@ -83,11 +83,12 @@ nav a {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 25px;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 
 .left-panel,
-.right-panel {
+.right-panel,
+.full-comments {
   background: white;
   padding: 28px;
   border-radius: 12px;
@@ -100,7 +101,8 @@ nav a {
 }
 
 .left-panel h3,
-.right-panel h3 {
+.right-panel h3,
+.full-comments h3 {
   color: #0b3d91;
 }
 
@@ -138,12 +140,15 @@ nav a {
   margin: 15px 0;
 }
 
-.comments-box {
+.full-comments {
+  grid-column: 1 / 3;
   border: 1px dashed #aaa;
-  padding: 15px;
-  margin-top: 20px;
   background: #fafafa;
-  border-radius: 8px;
+}
+
+.comment-note {
+  color: #555;
+  margin-bottom: 20px;
 }
 
 .submit-section {
@@ -182,6 +187,10 @@ footer {
 @media (max-width: 900px) {
   .paper-card {
     grid-template-columns: 1fr;
+  }
+
+  .full-comments {
+    grid-column: 1;
   }
 
   header h1 {
