@@ -1,6 +1,23 @@
 console.log("script.js loaded");
 
-function loadGiscus(container) {
+function filterPapers(keyword) {
+  const papers = document.querySelectorAll(".paper-card");
+
+  papers.forEach(function (paper) {
+    const keywords = paper.getAttribute("data-keywords");
+
+    if (keyword === "all" || keywords.includes(keyword)) {
+      paper.classList.remove("hidden");
+    } else {
+      paper.classList.add("hidden");
+    }
+  });
+}
+
+function loadComments(button) {
+  const discussionSection = button.closest(".paper-discussion");
+  const container = discussionSection.querySelector(".giscus-comment");
+
   if (container.getAttribute("data-loaded") === "true") {
     return;
   }
@@ -26,34 +43,9 @@ function loadGiscus(container) {
 
   container.appendChild(script);
   container.setAttribute("data-loaded", "true");
-}
 
-function loadVisibleComments() {
-  const visiblePapers = document.querySelectorAll(".paper-card:not(.hidden)");
-
-  visiblePapers.forEach(function (paper) {
-    const commentBox = paper.querySelector(".giscus-comment");
-
-    if (commentBox) {
-      loadGiscus(commentBox);
-    }
-  });
-}
-
-function filterPapers(keyword) {
-  const papers = document.querySelectorAll(".paper-card");
-
-  papers.forEach(function (paper) {
-    const keywords = paper.getAttribute("data-keywords");
-
-    if (keyword === "all" || keywords.includes(keyword)) {
-      paper.classList.remove("hidden");
-    } else {
-      paper.classList.add("hidden");
-    }
-  });
-
-  setTimeout(loadVisibleComments, 300);
+  button.textContent = "Comments Loaded";
+  button.disabled = true;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
