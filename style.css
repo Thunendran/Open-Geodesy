@@ -80,19 +80,28 @@ nav a {
 }
 
 .paper-card {
+  margin-bottom: 60px;
+}
+
+.paper-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 25px;
-  margin-bottom: 45px;
 }
 
 .left-panel,
 .right-panel,
-.full-comments {
+.paper-discussion {
   background: white;
   padding: 28px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.paper-discussion {
+  margin-top: 25px;
+  border: 1px dashed #aaa;
+  background: #fafafa;
 }
 
 .left-panel h2 {
@@ -102,7 +111,7 @@ nav a {
 
 .left-panel h3,
 .right-panel h3,
-.full-comments h3 {
+.paper-discussion h3 {
   color: #0b3d91;
 }
 
@@ -140,17 +149,6 @@ nav a {
   margin: 15px 0;
 }
 
-.full-comments {
-  grid-column: 1 / 3;
-  border: 1px dashed #aaa;
-  background: #fafafa;
-}
-
-.comment-note {
-  color: #555;
-  margin-bottom: 20px;
-}
-
 .submit-section {
   max-width: 900px;
   margin: 30px auto;
@@ -185,12 +183,8 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .paper-card {
+  .paper-layout {
     grid-template-columns: 1fr;
-  }
-
-  .full-comments {
-    grid-column: 1;
   }
 
   header h1 {
