@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Open Geodesy</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/computer-modern@0.1.2/index.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>Open Geodesy</h1>
+  <p>A place to reflect on how research shapes scientific thinking.</p>
+</header>
+
+<nav>
+  <a href="#reflections">Research Reflections</a>
+  <a href="#submit">Submit</a>
+  <a href="#about">About</a>
+</nav>
+
+<section class="intro" id="about">
+  <h2>Research Reflections in Geodesy</h2>
+  <p>
+    Open Geodesy is a platform for discussing geodesy research papers,
+    identifying important points, understanding their impact, and reflecting
+    on how each paper continues or changes scientific thinking.
+  </p>
+</section>
+
+<section class="filters">
+  <button onclick="filterPapers('all')">All</button>
+  <button onclick="filterPapers('gnss')">GNSS</button>
+  <button onclick="filterPapers('reference-frame')">Reference Frames</button>
+  <button onclick="filterPapers('gravity')">Gravity</button>
+  <button onclick="filterPapers('geoid')">Geoid</button>
+  <button onclick="filterPapers('sea-level')">Sea Level</button>
+  <button onclick="filterPapers('satellite-geodesy')">Satellite Geodesy</button>
+</section>
+
+<main class="container" id="reflections">
+
+  <article class="paper-card" data-keywords="gnss reference-frame satellite-geodesy">
+
+    <div class="left-panel">
+      <p class="date">Posted: 2026-05-06</p>
+
+      <h2>Example Paper Title: GNSS Reference Frame Study</h2>
+
+      <p class="meta">
+        Authors: Author Name, Co-author Name<br>
+        Year: 2025<br>
+        Field: GNSS, Reference Frames, Satellite Geodesy
+      </p>
+
+      <div class="tags">
+        <span>GNSS</span>
+        <span>Reference Frames</span>
+        <span>Satellite Geodesy</span>
+      </div>
+
+      <h3>Research Reflection</h3>
+      <p>
+        This paper investigates how GNSS observations contribute to reference
+        frame realization and long-term geodetic monitoring.
+      </p>
+
+      <h3>Important Points</h3>
+      <ul>
+        <li>Main problem addressed by the paper.</li>
+        <li>Data and methods used by the authors.</li>
+        <li>Main results and scientific contribution.</li>
+        <li>Limitations and possible future research questions.</li>
+      </ul>
+
+      <h3>Impact</h3>
+      <p>
+        The paper may influence GNSS processing, reference frame stability,
+        geodynamic interpretation, and Earth observation applications.
+      </p>
+
+      <div class="comments-box">
+        <h3>Comments on Research Reflection</h3>
+
+        <script src="https://giscus.app/client.js"
+          data-repo="Thunendran/Open-Geodesy"
+          data-repo-id="PASTE_REPO_ID_HERE"
+          data-category="General"
+          data-category-id="PASTE_CATEGORY_ID_HERE"
+          data-mapping="specific"
+          data-term="paper-gnss-reference-frame-2025-reflection"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="light"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </div>
+
+    <aside class="right-panel">
+      <h3>Direction of Thought</h3>
+
+      <div class="direction-box">
+        <strong>Direction Type</strong>
+        <p>Continues existing direction / Changes direction / Opens new direction</p>
+      </div>
+
+      <div class="direction-box">
+        <strong>Simple Explanation</strong>
+        <p>
+          This paper continues the direction of using GNSS as a fundamental
+          tool for precise positioning and Earth system monitoring.
+        </p>
+      </div>
+
+      <div class="author-box">
+        <strong>Author Perspective</strong>
+        <p>
+          The original author or co-author can clarify, agree, correct, or add
+          their own perspective here.
+        </p>
+      </div>
+
+      <div class="comments-box">
+        <h3>Comments on Direction / Author Perspective</h3>
+
+        <script src="https://giscus.app/client.js"
+          data-repo="Thunendran/Open-Geodesy"
+          data-repo-id="PASTE_REPO_ID_HERE"
+          data-category="General"
+          data-category-id="PASTE_CATEGORY_ID_HERE"
+          data-mapping="specific"
+          data-term="paper-gnss-reference-frame-2025-direction"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="light"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </aside>
+
+  </article>
+
+</main>
+
+<section class="submit-section" id="submit">
+  <h2>Submit a Research Reflection</h2>
+  <p>
+    Contributors may submit a geodesy paper reflection including paper title,
+    authors, DOI/link, important points, impact, and direction of thought.
+  </p>
+
+  <a class="submit-button" href="#" target="_blank">Submit Form Coming Soon</a>
+</section>
+
+<footer>
+  <p>© 2026 Open Geodesy</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
