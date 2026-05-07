@@ -40,93 +40,110 @@
   <button onclick="filterPapers('geoid')">Geoid</button>
   <button onclick="filterPapers('sea-level')">Sea Level</button>
   <button onclick="filterPapers('satellite-geodesy')">Satellite Geodesy</button>
+  <button onclick="filterPapers('physical-geodesy')">Physical Geodesy</button>
+  <button onclick="filterPapers('potential-theory')">Potential Theory</button>
+  <button onclick="filterPapers('cuboid')">Cuboid</button>
+  <button onclick="filterPapers('numerical-methods')">Numerical Methods</button>
 </section>
 
 <main class="container" id="reflections">
 
   <!-- PAPER 1 -->
-  <article class="paper-card" data-keywords="gnss reference-frame satellite-geodesy">
+<article class="paper-card" data-keywords="gravity physical-geodesy potential-theory cuboid numerical-methods">
 
-    <div class="paper-layout">
-      <div class="left-panel">
-        <p class="date">Posted: 2026-05-06</p>
+  <div class="paper-layout">
+    <div class="left-panel">
+      <p class="date">Posted: 2026-05-07</p>
 
-        <h2>Example Paper Title: GNSS Reference Frame Study</h2>
+      <h2>A Generalized Algorithm for the Gravitational Potential of a Homogeneous Cuboid</h2>
 
-        <p class="meta">
-          Authors: Author Name, Co-author Name<br>
-          Year: 2025<br>
-          Field: GNSS, Reference Frames, Satellite Geodesy
-        </p>
+      <p class="meta">
+        Authors: Thunendran Periyandy and Michael Bevis<br>
+        Year: 2025<br>
+        Field: Physical Geodesy, Gravity Field, Potential Theory, Numerical Methods<br>
+        DOI: <a href="https://doi.org/10.3844/pisp.2025.7.17" target="_blank">
+          10.3844/pisp.2025.7.17
+        </a>
+      </p>
 
-        <div class="tags">
-          <span>GNSS</span>
-          <span>Reference Frames</span>
-          <span>Satellite Geodesy</span>
-        </div>
+      <div class="tags">
+        <span>Gravity</span>
+        <span>Physical Geodesy</span>
+        <span>Potential Theory</span>
+        <span>Cuboid</span>
+        <span>Numerical Methods</span>
+      </div>
 
-        <h3>Research Reflection</h3>
+      <h3>Research Reflection</h3>
+      <p>
+        This paper presents a generalized algorithm for computing the gravitational
+        potential of a homogeneous cuboid. Its central contribution is that the
+        formulation works inside, on, and outside the cuboid, removing an important
+        spatial restriction found in many earlier potential-field algorithms.
+      </p>
+
+      <h3>Important Points</h3>
+      <ul>
+        <li>Develops an analytical formulation for the gravitational potential of a uniform-density cuboid.</li>
+        <li>Uses a hexagonal graph structure to organize logarithmic and arctangent terms.</li>
+        <li>Handles numerical singularities to improve stability and correct sign allocation.</li>
+        <li>Provides pseudocode and implementations in Python, Matlab, and Julia.</li>
+        <li>Introduces the Laplacian test as a validation method for the algorithm and codes.</li>
+      </ul>
+
+      <h3>Impact</h3>
+      <p>
+        The work is important for physical geodesy, gravity-field modelling, and
+        computational potential theory. It provides a stable way to compute the
+        gravitational potential of cuboidal mass elements without restricting the
+        evaluation point to the exterior of the body.
+      </p>
+    </div>
+
+    <aside class="right-panel">
+      <h3>Direction of Thought</h3>
+
+      <div class="direction-box">
+        <strong>Direction Type</strong>
+        <p>Changes direction / Opens new direction</p>
+      </div>
+
+      <div class="direction-box">
+        <strong>Simple Explanation</strong>
         <p>
-          This paper investigates how GNSS observations contribute to reference
-          frame realization and long-term geodetic monitoring.
-        </p>
-
-        <h3>Important Points</h3>
-        <ul>
-          <li>Main problem addressed by the paper.</li>
-          <li>Data and methods used by the authors.</li>
-          <li>Main results and scientific contribution.</li>
-          <li>Limitations and possible future research questions.</li>
-        </ul>
-
-        <h3>Impact</h3>
-        <p>
-          The paper may influence GNSS processing, reference frame stability,
-          geodynamic interpretation, and Earth observation applications.
+          This paper shifts the discussion from exterior-only gravitational
+          potential computation toward a spatially general formulation that can
+          be used inside, on, and outside a cuboid.
         </p>
       </div>
 
-      <aside class="right-panel">
-        <h3>Direction of Thought</h3>
+      <div class="author-box">
+        <strong>Author Perspective</strong>
+        <p>
+          As the first author, my intention is to make gravitational potential
+          computation for cuboidal bodies more general, stable, and easier to
+          implement for geodetic and geophysical applications.
+        </p>
+      </div>
+    </aside>
+  </div>
 
-        <div class="direction-box">
-          <strong>Direction Type</strong>
-          <p>Continues existing direction / Changes direction / Opens new direction</p>
-        </div>
+  <section class="paper-discussion">
+    <h3>Discussion</h3>
+    <p>
+      Readers, researchers, authors, and co-authors can discuss this paper here.
+    </p>
 
-        <div class="direction-box">
-          <strong>Simple Explanation</strong>
-          <p>
-            This paper continues the direction of using GNSS as a fundamental
-            tool for precise positioning and Earth system monitoring.
-          </p>
-        </div>
+    <button class="comment-button" onclick="loadComments(this)">
+      Show Comments
+    </button>
 
-        <div class="author-box">
-          <strong>Author Perspective</strong>
-          <p>
-            Author/co-author statement will be added here after verification.
-          </p>
-        </div>
-      </aside>
-    </div>
+    <div class="giscus-comment" data-term="paper-generalized-gravitational-potential-cuboid-2025"></div>
+  </section>
 
-    <section class="paper-discussion">
-      <h3>Discussion</h3>
-      <p>
-        Readers, researchers, authors, and co-authors can discuss this paper here.
-      </p>
+</article>
 
-      <button class="comment-button" onclick="loadComments(this)">
-        Show Comments
-      </button>
-
-      <div class="giscus-comment" data-term="paper-gnss-reference-frame-2025"></div>
-    </section>
-
-  </article>
-
-  <!-- PAPER 2 -->
+  <!-- PAPER 2
   <article class="paper-card" data-keywords="gravity geoid sea-level">
 
     <div class="paper-layout">
@@ -205,7 +222,7 @@
       <div class="giscus-comment" data-term="paper-gravity-geoid-2024"></div>
     </section>
 
-  </article>
+  </article>  -->
 
 </main>
 
