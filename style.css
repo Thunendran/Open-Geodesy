@@ -182,6 +182,10 @@ footer {
   margin-top: 40px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 @media (max-width: 900px) {
   .paper-layout {
     grid-template-columns: 1fr;
