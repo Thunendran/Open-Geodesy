@@ -1,42 +1,61 @@
 console.log("script.js loaded");
 
-function filterPapers(keyword) {
-  const papers = document.querySelectorAll(".paper-card");
+function loadGiscus(container) {
+  if (container.getAttribute("data-loaded") === "true") {
+    return;
+  }
 
-  papers.forEach(function(paper) {
-    const keywords = paper.getAttribute("data-keywords");
+  const term = container.getAttribute("data-term");
 
-    if (keyword === "all" || keywords.includes(keyword)) {
-      paper.style.display = "block";
-    } else {
-      paper.style.display = "none";
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.setAttribute("data-repo", "Thunendran/Open-Geodesy");
+  script.setAttribute("data-repo-id", "R_kgDOSWRLwg");
+  script.setAttribute("data-category", "General");
+  script.setAttribute("data-category-id", "DIC_kwDOSWRLws4C8eLb");
+  script.setAttribute("data-mapping", "specific");
+  script.setAttribute("data-term", term);
+  script.setAttribute("data-strict", "0");
+  script.setAttribute("data-reactions-enabled", "1");
+  script.setAttribute("data-emit-metadata", "0");
+  script.setAttribute("data-input-position", "bottom");
+  script.setAttribute("data-theme", "preferred_color_scheme");
+  script.setAttribute("data-lang", "en");
+  script.setAttribute("crossorigin", "anonymous");
+  script.async = true;
+
+  container.appendChild(script);
+  container.setAttribute("data-loaded", "true");
+}
+
+function loadVisibleComments() {
+  const visiblePapers = document.querySelectorAll(".paper-card:not(.hidden)");
+
+  visiblePapers.forEach(function (paper) {
+    const commentBox = paper.querySelector(".giscus-comment");
+
+    if (commentBox) {
+      loadGiscus(commentBox);
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const commentContainers = document.querySelectorAll(".giscus-comment");
+function filterPapers(keyword) {
+  const papers = document.querySelectorAll(".paper-card");
 
-  commentContainers.forEach(function (container) {
-    const term = container.getAttribute("data-term");
+  papers.forEach(function (paper) {
+    const keywords = paper.getAttribute("data-keywords");
 
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "Thunendran/Open-Geodesy");
-    script.setAttribute("data-repo-id", "R_kgDOSWRLwg");
-    script.setAttribute("data-category", "General");
-    script.setAttribute("data-category-id", "DIC_kwDOSWRLws4C8eLb");
-    script.setAttribute("data-mapping", "specific");
-    script.setAttribute("data-term", term);
-    script.setAttribute("data-strict", "0");
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "preferred_color_scheme");
-    script.setAttribute("data-lang", "en");
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-
-    container.appendChild(script);
+    if (keyword === "all" || keywords.includes(keyword)) {
+      paper.classList.remove("hidden");
+    } else {
+      paper.classList.add("hidden");
+    }
   });
+
+  setTimeout(loadVisibleComments, 300);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  filterPapers("all");
 });
